@@ -9,6 +9,7 @@
     --primary-color: #2c5aa0;
     --secondary-color: #f39c12;
     --accent-green: #27ae60;
+    --accent-purple: #8e44ad;
     --dark-bg: #1a1a2e;
     --light-bg: #f8f9fa;
     --text-dark: #333;
@@ -89,122 +90,135 @@ h3 {
 .manifesto-intro {
     text-align: center;
     padding: 2rem 0;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.intro-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+.intro-content .lead {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
 }
 
-.intro-box {
-    padding: 2.5rem;
+.philosophy-statement {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #3d6ab3 100%);
+    color: white;
+    padding: 2rem;
     border-radius: 12px;
+    margin-top: 2rem;
     box-shadow: var(--card-shadow);
 }
 
-.intro-box.problem {
-    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-    color: white;
+.philosophy-statement p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
 }
 
-.intro-box.solution {
-    background: linear-gradient(135deg, var(--accent-green) 0%, #229954 100%);
-    color: white;
-}
-
-.intro-box h3 {
-    color: white;
-    margin-bottom: 1rem;
-    font-size: 1.6rem;
-}
-
-.intro-box p {
-    line-height: 1.7;
-    margin-bottom: 0.75rem;
-}
-
-.emphasis {
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.big-emphasis {
+.philosophy-statement .emphasis {
+    font-size: 1.4rem;
     font-weight: 700;
-    font-size: 1.3rem;
-    line-height: 1.5;
-    margin: 1rem 0;
 }
 
-/* Channels Section */
+/* Section Intro */
 .section-intro {
     text-align: center;
     font-size: 1.1rem;
     color: var(--text-light);
     max-width: 800px;
     margin: 0 auto 2.5rem;
+    line-height: 1.7;
 }
 
-.channels-grid {
+/* Three Pillars Section */
+.pillars {
+    padding: 2rem 0;
+}
+
+.pillars-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
     margin-top: 2rem;
 }
 
-.channel-card {
+.pillar-card {
     background: white;
     border: 2px solid var(--border-color);
     border-radius: 12px;
-    padding: 2rem;
+    padding: 2.5rem;
     text-align: center;
     transition: all 0.3s ease;
     position: relative;
 }
 
-.channel-card:hover {
-    border-color: var(--primary-color);
+.pillar-card:hover {
     box-shadow: var(--card-shadow-hover);
     transform: translateY(-5px);
 }
 
-.channel-icon {
-    font-size: 3.5rem;
+.pillar-card.location:hover {
+    border-color: var(--accent-green);
+}
+
+.pillar-card.process:hover {
+    border-color: var(--primary-color);
+}
+
+.pillar-card.intellect:hover {
+    border-color: var(--accent-purple);
+}
+
+.pillar-icon {
+    font-size: 4rem;
     margin-bottom: 1rem;
 }
 
-.channel-card h3 {
+.pillar-card h3 {
     color: var(--primary-color);
-    margin-bottom: 0.75rem;
-    font-size: 1.4rem;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
 }
 
-.north-star {
+.pillar-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.pillar-goal {
     display: inline-block;
     background: var(--secondary-color);
     color: white;
-    padding: 0.4rem 1rem;
+    padding: 0.5rem 1.25rem;
     border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
 }
 
-.channel-card p {
+.pillar-card p {
     color: var(--text-light);
-    line-height: 1.7;
+    line-height: 1.8;
     margin-bottom: 1.5rem;
-    min-height: 100px;
+    min-height: 120px;
+}
+
+.pillar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
 }
 
 .coming-soon {
     display: inline-block;
     background: #95a5a6;
     color: white;
-    padding: 0.6rem 1.2rem;
+    padding: 0.75rem 1.5rem;
     border-radius: 6px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 600;
 }
 
@@ -225,209 +239,208 @@ h3 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Pillars Section */
-.pillars {
+.btn.secondary {
+    background-color: var(--secondary-color);
+}
+
+.btn.secondary:hover {
+    background-color: #d68910;
+}
+
+/* Core Principles Section */
+.principles {
     background-color: var(--light-bg);
     padding: 3rem 2rem;
     border-radius: 12px;
 }
 
-.pillar {
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.principle-card {
     background: white;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding: 2rem;
     border-radius: 8px;
-    border-left: 5px solid var(--secondary-color);
     box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
 }
 
-.pillar:last-child {
-    margin-bottom: 0;
+.principle-card:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-3px);
 }
 
-.pillar-header {
-    display: flex;
-    align-items: center;
+.principle-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.principle-card h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
     margin-bottom: 0.75rem;
 }
 
-.pillar-icon {
-    font-size: 2rem;
-    margin-right: 0.75rem;
-}
-
-.pillar-header h3 {
-    color: var(--primary-color);
-    margin: 0;
-}
-
-.pillar p {
+.principle-card p {
     color: var(--text-light);
     line-height: 1.7;
-    margin-left: 2.75rem;
 }
 
-/* Pledge Section */
-.pledge {
+/* Astronomy Spotlight Section */
+.astronomy-spotlight {
+    padding: 2rem 0;
+}
+
+.astronomy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.astronomy-card {
+    background: white;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.astronomy-card:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.card-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.astronomy-card h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.north-star {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.astronomy-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.key-insight {
+    background: var(--light-bg);
+    padding: 1.25rem;
+    border-left: 4px solid var(--secondary-color);
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+}
+
+.key-insight strong {
+    color: var(--primary-color);
+}
+
+.astronomy-card .btn {
+    display: block;
+    text-align: center;
+}
+
+/* Journey Section */
+.journey {
     background: var(--dark-bg);
     color: white;
     padding: 3rem;
     border-radius: 12px;
 }
 
-.pledge h2 {
+.journey h2 {
     color: white;
 }
 
-.pledge-grid {
+.journey .lead {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.journey-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin: 2rem 0;
 }
 
-.pledge-item {
+.journey-item {
     background: rgba(255, 255, 255, 0.1);
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 8px;
-    text-align: center;
+    transition: all 0.3s ease;
 }
 
-.pledge-number {
-    width: 50px;
-    height: 50px;
+.journey-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+.journey-item.active {
+    background: rgba(243, 156, 18, 0.2);
+    border: 2px solid var(--secondary-color);
+}
+
+.journey-item h3 {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.journey-item p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.status {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.status.active {
     background: var(--secondary-color);
     color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0 auto 1rem;
 }
 
-.pledge-item p {
-    font-size: 1.05rem;
-    line-height: 1.6;
-}
-
-.quote {
+.final-quote {
     background: rgba(255, 255, 255, 0.15);
     border-left: 4px solid var(--secondary-color);
     padding: 1.5rem 2rem;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     font-size: 1.4rem;
     font-style: italic;
     text-align: center;
     border-radius: 8px;
-}
-
-/* Approach Section */
-.approach-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.approach-item {
-    padding: 1.5rem;
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
-    background-color: white;
-    transition: all 0.3s ease;
-}
-
-.approach-item:hover {
-    border-color: var(--primary-color);
-    box-shadow: var(--card-shadow);
-    transform: translateY(-3px);
-}
-
-.approach-item h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.75rem;
-    font-size: 1.3rem;
-}
-
-.approach-item p {
-    color: var(--text-light);
-    line-height: 1.7;
-}
-
-/* Observatory Section */
-.observatory {
-    text-align: center;
-}
-
-.observatory-card {
-    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
-    color: white;
-    padding: 3rem;
-    border-radius: 12px;
-    box-shadow: var(--card-shadow-hover);
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.observatory-card .project-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
-
-.observatory-card h3 {
-    color: white;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.observatory-card p {
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-}
-
-.observatory-card .btn {
-    background: white;
-    color: var(--primary-color);
-}
-
-.observatory-card .btn:hover {
-    background: var(--light-bg);
-}
-
-/* CTA Section */
-.cta {
-    text-align: center;
-    padding: 3rem 2rem;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 12px;
-}
-
-.cta h2 {
-    margin-bottom: 1.5rem;
-}
-
-.cta p {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: var(--text-dark);
-    max-width: 800px;
-    margin: 0 auto 1rem;
-}
-
-.cta-emphasis {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-    margin-top: 1.5rem;
-}
-
-.final-message {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--dark-bg);
-    margin-top: 1.5rem;
 }
 
 /* Footer */
@@ -487,41 +500,41 @@ footer p {
         font-size: 2rem;
     }
 
-    .intro-grid {
+    .intro-content .lead {
+        font-size: 1.1rem;
+    }
+
+    .philosophy-statement p {
+        font-size: 1.1rem;
+    }
+
+    .philosophy-statement .emphasis {
+        font-size: 1.25rem;
+    }
+
+    .pillars-grid {
         grid-template-columns: 1fr;
     }
 
-    .intro-box {
-        padding: 1.5rem;
-    }
-
-    .channels-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .channel-card p {
+    .pillar-card p {
         min-height: auto;
     }
 
-    .pledge-grid {
+    .astronomy-grid {
         grid-template-columns: 1fr;
     }
 
-    .approach-content {
+    .principles-grid {
         grid-template-columns: 1fr;
     }
 
-    .pillar p {
-        margin-left: 0;
+    .journey-grid {
+        grid-template-columns: 1fr;
     }
 
-    .quote {
+    .final-quote {
         font-size: 1.2rem;
         padding: 1rem 1.5rem;
-    }
-
-    .cta-emphasis {
-        font-size: 1.15rem;
     }
 
     .footer-links a {
@@ -551,14 +564,18 @@ footer p {
         margin-bottom: 2.5rem;
     }
 
-    .intro-box,
-    .channel-card,
-    .approach-item,
-    .pillar {
-        padding: 1.25rem;
+    .philosophy-statement {
+        padding: 1.5rem;
     }
 
-    .observatory-card {
-        padding: 2rem 1.5rem;
+    .pillar-card,
+    .principle-card,
+    .astronomy-card,
+    .journey-item {
+        padding: 1.5rem;
+    }
+
+    .pillar-card h3 {
+        font-size: 1.6rem;
     }
 }
