@@ -205,6 +205,30 @@ h3 {
     min-height: 120px;
 }
 
+.current-project {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    border-left: 4px solid var(--secondary-color);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.project-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #856404;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.project-text {
+    font-size: 1rem;
+    color: #1a1a2e;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
 .pillar-links {
     display: flex;
     flex-direction: column;
